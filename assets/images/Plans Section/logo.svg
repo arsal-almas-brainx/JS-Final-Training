@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="83.794" height="87.393" viewBox="0 0 83.794 87.393">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_50" data-name="Path 50" d="M52.59,29.833a2.9,2.9,0,1,0,2.9-2.9,2.9,2.9,0,0,0-2.9,2.9" transform="translate(-52.59 -26.937)" fill="none"/>
+    </clipPath>
+    <radialGradient id="radial-gradient" cx="0.122" cy="-0.073" r="1.648" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e9ad2b"/>
+      <stop offset="0.333" stop-color="#e9ad2b"/>
+      <stop offset="0.501" stop-color="#e18a2e"/>
+      <stop offset="0.66" stop-color="#db7130"/>
+      <stop offset="0.804" stop-color="#d86232"/>
+      <stop offset="0.922" stop-color="#d75d33"/>
+      <stop offset="1" stop-color="#d75d33"/>
+    </radialGradient>
+    <clipPath id="clip-path-2">
+      <path id="Path_51" data-name="Path 51" d="M67.757,0a2.9,2.9,0,1,0,2.9,2.9A2.9,2.9,0,0,0,67.757,0Z" transform="translate(-64.861 -0.001)" fill="none"/>
+    </clipPath>
+    <radialGradient id="radial-gradient-2" cx="0.122" cy="-0.073" r="1.53" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#d81988"/>
+      <stop offset="0.004" stop-color="#d81988"/>
+      <stop offset="0.144" stop-color="#d11a87"/>
+      <stop offset="0.332" stop-color="#c01d84"/>
+      <stop offset="0.549" stop-color="#a42280"/>
+      <stop offset="0.786" stop-color="#7d297a"/>
+      <stop offset="1" stop-color="#533174"/>
+    </radialGradient>
+    <clipPath id="clip-path-3">
+      <path id="Path_52" data-name="Path 52" d="M101.232,20.117h1.57a11.984,11.984,0,0,0,1.12-1.644s-1.057.676-2.69,1.644" transform="translate(-101.232 -18.473)" fill="none"/>
+    </clipPath>
+    <radialGradient id="radial-gradient-3" cx="0.282" cy="0.156" r="0.846" xlink:href="#radial-gradient-2"/>
+    <clipPath id="clip-path-4">
+      <path id="Path_53" data-name="Path 53" d="M14.5,88.392H32.14a40.018,40.018,0,0,1-7.264-5.541H20.044v-5.6A39.143,39.143,0,0,1,14.9,67.28c-.136-.048-.264-.115-.4-.17ZM84.509,77.438v5.413H79.84a39.33,39.33,0,0,1-7.267,5.541H90.05v-22.1a39.32,39.32,0,0,1-5.541,11.148M14.5,12.846v39.94a7.751,7.751,0,0,1,1.738-.5l3.8-.609V18.387H60.966a20.977,20.977,0,0,1,4.216-5.541Zm74.832,0a27.851,27.851,0,0,1-4.826,10.733V41.348l1.377-.22a7.738,7.738,0,0,1,4.164.48V12.846Z" transform="translate(-14.503 -12.846)" fill="none"/>
+    </clipPath>
+    <radialGradient id="radial-gradient-4" cx="0.282" cy="0.156" r="0.648" xlink:href="#radial-gradient-2"/>
+    <clipPath id="clip-path-5">
+      <path id="Path_54" data-name="Path 54" d="M73.373,27.517C78.633,26.44,89.93,15.754,89.93,15.754,87.676,22.634,75.743,31.59,75.743,31.59c30.647,1.738,24.922-28.908,24.922-28.908C70.892,6.514,73.373,27.517,73.373,27.517" transform="translate(-73.322 -2.682)" fill="none"/>
+    </clipPath>
+    <radialGradient id="radial-gradient-5" cx="0.755" cy="-0.069" r="1" xlink:href="#radial-gradient"/>
+    <clipPath id="clip-path-6">
+      <path id="Path_55" data-name="Path 55" d="M79.3,55.761a2.886,2.886,0,0,0,.776,1.963l4.707-.686a2.866,2.866,0,0,0,.308-1.276,2.9,2.9,0,0,0-5.791,0" transform="translate(-79.303 -52.865)" fill="none"/>
+    </clipPath>
+    <radialGradient id="radial-gradient-6" cx="0.122" cy="-0.073" r="1.162" xlink:href="#radial-gradient-2"/>
+    <clipPath id="clip-path-7">
+      <path id="Path_56" data-name="Path 56" d="M33.259,56.179l10.916-1.59c-2.52-2.646-4.845-5.622-5.718-8.287a111.18,111.18,0,0,0,9.279,7.767l6.94-1.011c-1.273-6.464-6.506-17.2-26.955-19.827,0,0-2.7,14.456,5.538,22.948" transform="translate(-27.298 -33.231)" fill="none"/>
+    </clipPath>
+    <radialGradient id="radial-gradient-7" cx="0.189" cy="-0.073" r="1.163" xlink:href="#radial-gradient-2"/>
+    <clipPath id="clip-path-8">
+      <path id="Path_57" data-name="Path 57" d="M18.373,76.029A35.39,35.39,0,1,0,87.951,63.04Z" transform="translate(-18.373 -63.04)" fill="none"/>
+    </clipPath>
+    <radialGradient id="radial-gradient-8" cx="0.769" cy="0.262" r="0.735" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#dc5838"/>
+      <stop offset="0.078" stop-color="#dc5838"/>
+      <stop offset="0.189" stop-color="#d85238"/>
+      <stop offset="0.326" stop-color="#cf4338"/>
+      <stop offset="0.476" stop-color="#c02a39"/>
+      <stop offset="0.634" stop-color="#ab0839"/>
+      <stop offset="0.667" stop-color="#a7003a"/>
+      <stop offset="1" stop-color="#a7003a"/>
+    </radialGradient>
+    <clipPath id="clip-path-9">
+      <path id="Path_58" data-name="Path 58" d="M85.613,57.873,16.276,70.815A3.607,3.607,0,0,0,17.6,77.906L86.935,64.962a3.606,3.606,0,0,0-.656-7.151,3.648,3.648,0,0,0-.666.062" transform="translate(-13.332 -57.811)" fill="none"/>
+    </clipPath>
+    <radialGradient id="radial-gradient-9" cx="0.706" cy="0.105" r="1.595" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e9ad2b"/>
+      <stop offset="0.101" stop-color="#e9ad2b"/>
+      <stop offset="0.335" stop-color="#e18a2e"/>
+      <stop offset="0.557" stop-color="#db7130"/>
+      <stop offset="0.758" stop-color="#d86232"/>
+      <stop offset="0.922" stop-color="#d75d33"/>
+      <stop offset="1" stop-color="#d75d33"/>
+    </radialGradient>
+    <clipPath id="clip-path-10">
+      <rect id="Rectangle_3299" data-name="Rectangle 3299" width="83.794" height="87.393" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="logo" transform="translate(-4.779)">
+    <g id="Group_42050" data-name="Group 42050" transform="translate(36.423 18.656)">
+      <g id="Group_42049" data-name="Group 42049" clip-path="url(#clip-path)">
+        <rect id="Rectangle_3290" data-name="Rectangle 3290" width="5.791" height="5.793" transform="translate(0 0)" fill="url(#radial-gradient)"/>
+      </g>
+    </g>
+    <g id="Group_42052" data-name="Group 42052" transform="translate(44.922 0.001)">
+      <g id="Group_42051" data-name="Group 42051" clip-path="url(#clip-path-2)">
+        <rect id="Rectangle_3291" data-name="Rectangle 3291" width="5.792" height="5.791" transform="translate(0 0)" fill="url(#radial-gradient-2)"/>
+      </g>
+    </g>
+    <g id="Group_42054" data-name="Group 42054" transform="translate(70.112 12.794)">
+      <g id="Group_42053" data-name="Group 42053" clip-path="url(#clip-path-3)">
+        <rect id="Rectangle_3292" data-name="Rectangle 3292" width="2.69" height="1.643" transform="translate(0 0)" fill="url(#radial-gradient-3)"/>
+      </g>
+    </g>
+    <g id="Group_42056" data-name="Group 42056" transform="translate(10.045 8.897)">
+      <g id="Group_42055" data-name="Group 42055" clip-path="url(#clip-path-4)">
+        <rect id="Rectangle_3293" data-name="Rectangle 3293" width="75.547" height="75.546" transform="translate(0 0)" fill="url(#radial-gradient-4)"/>
+      </g>
+    </g>
+    <g id="Group_42058" data-name="Group 42058" transform="translate(50.782 1.858)">
+      <g id="Group_42057" data-name="Group 42057" clip-path="url(#clip-path-5)">
+        <rect id="Rectangle_3294" data-name="Rectangle 3294" width="35.497" height="30.646" transform="translate(-2.43 0)" fill="url(#radial-gradient-5)"/>
+      </g>
+    </g>
+    <g id="Group_42060" data-name="Group 42060" transform="translate(54.924 36.613)">
+      <g id="Group_42059" data-name="Group 42059" clip-path="url(#clip-path-6)">
+        <rect id="Rectangle_3295" data-name="Rectangle 3295" width="5.791" height="4.858" transform="translate(0 0)" fill="url(#radial-gradient-6)"/>
+      </g>
+    </g>
+    <g id="Group_42062" data-name="Group 42062" transform="translate(18.906 23.015)">
+      <g id="Group_42061" data-name="Group 42061" clip-path="url(#clip-path-7)">
+        <rect id="Rectangle_3296" data-name="Rectangle 3296" width="29.656" height="22.948" transform="translate(-2.277 0)" fill="url(#radial-gradient-7)"/>
+      </g>
+    </g>
+    <g id="Group_42064" data-name="Group 42064" transform="translate(12.725 43.66)">
+      <g id="Group_42063" data-name="Group 42063" clip-path="url(#clip-path-8)">
+        <rect id="Rectangle_3297" data-name="Rectangle 3297" width="80.159" height="57.536" transform="matrix(0.983, -0.184, 0.184, 0.983, -8.094, 1.511)" fill="url(#radial-gradient-8)"/>
+      </g>
+    </g>
+    <g id="Group_42066" data-name="Group 42066" transform="translate(9.233 40.039)">
+      <g id="Group_42065" data-name="Group 42065" clip-path="url(#clip-path-9)">
+        <rect id="Rectangle_3298" data-name="Rectangle 3298" width="79.599" height="34.27" transform="matrix(0.983, -0.184, 0.184, 0.983, -3.994, 0.689)" fill="url(#radial-gradient-9)"/>
+      </g>
+    </g>
+    <g id="Group_42068" data-name="Group 42068" transform="translate(58.779)">
+      <g id="Group_42067" data-name="Group 42067" transform="translate(-54)" clip-path="url(#clip-path-10)">
+        <text id="DELICACY_Restaurant" data-name="DELICACY Restaurant" transform="translate(38.53 93.393)" fill="#d75d33" font-size="6" font-family="Roboto-Black, Roboto" font-weight="800" letter-spacing="0.049em"><tspan x="-36" y="0" letter-spacing="0.05em">DELI</tspan><tspan y="0" letter-spacing="0.049em">C</tspan><tspan y="0" letter-spacing="0.05em">A</tspan><tspan y="0" letter-spacing="0.049em">C</tspan><tspan y="0">Y</tspan><tspan y="0" xml:space="preserve" letter-spacing="0.049em"> RESTAURANT</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

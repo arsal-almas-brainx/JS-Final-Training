@@ -1,0 +1,119 @@
+body{
+    background-color: #FFFFFF;
+}
+.main-body{
+    background-color: #FFFDF7;
+}
+.step-item {
+    font-weight: bold;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+.section-1-heading{
+    font-size: 2rem;
+    font-weight: 500;
+}
+.section-1-heading-text{
+    font-size: 0.98rem;
+    width: 58%;
+    margin-left: 18rem;
+}
+.orange-text{
+    color: #D75D33;
+    font-weight: 700;
+}
+.black-text{
+    color: black;
+    font-weight: 700;
+}
+.step-item.active {
+    color: #3167FF;
+}
+
+.step-item.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none; 
+}
+
+.step-separator {
+    font-weight: bold;
+    color: #dee2e6;
+    font-size: 1.2rem;
+}
+
+.step-content {
+    min-height: 200px;
+}
+.section-1-card-head{
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: -1rem;
+}
+.small-text{
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.section-1-price-plan{
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: -1.1rem;
+}
+.section-1-price{
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+.section-1-card-image {
+    overflow: hidden;
+    border-radius: 1.2rem; 
+}
+.section-1-card-image-inner {
+    display: block;
+    width: 100%;
+    transition: transform 0.4s ease; 
+}
+.section-1-card{
+    cursor: pointer;
+}
+.section-1-card:hover .section-1-card-image-inner {
+    transform: scale(1.1); 
+}
+.section-1-footer-text{
+    font-size: 0.85rem;
+}
+.section-1-button{
+    width: 12%;
+    color: white;
+    background-image: linear-gradient(to right, #AF2081, #533174);
+    font-weight: 600;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+.section-1-button:hover{
+    width: 38%;
+    color: white;
+}
+/*Responsive*/
+@media (max-width:767px) {
+    .section-1-heading-text{
+        width: 100%;
+        margin-left: 0;
+    }
+    .section-1-card-head{
+        font-size: 1rem;
+    }
+    .section-1-price-plan{
+        font-size: 0.7rem;
+    }
+    .small-text{
+        font-size: 0.6rem;
+    }
+    .section-1-price{
+        font-size: 0.75rem;
+    }
+    .section-1-card-image{
+        border-radius: 0rem;
+    }
+}
