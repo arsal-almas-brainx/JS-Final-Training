@@ -105,20 +105,152 @@ body{
     background-image: linear-gradient(to right, #AF2081, #533174);
     font-weight: 600;
     border-radius: 4px;
-    transition: width 0.3s ease;
+    transition: width 0.4s ease;
+}
+.section-2-button{
+    width: 30%;
+    color: white;
+    background-image: linear-gradient(to right, #AF2081, #533174);
+    font-weight: 600;
+    border-radius: 4px;
+    transform: translateX(15px);
 }
 
 .section-1-footer-button .section-1-button:active{
     color: white;
 }
 .section-1-card.active-selection {
-    border: 2px solid #EFA186 ; 
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    transform: none;
+}
+.section-1-card.active-selection .card-content-wrapper {
+    border: 2px solid #EFA186; 
     background-color: #fff9f5; 
     transform: scale(1.03);
     transition: all 0.2s ease-in-out;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     border-radius: 1.2rem;
-    padding: 0;
+    height: 100%; 
+}
+.big-font{
+    font-size: 3rem;
+}
+.delivery-date-container {
+    width: 33%;
+    max-height: 340px; 
+    overflow-y: auto;
+    transform: translateX(27rem);
+}
+
+.date-entry {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 0px;
+    background: #fff;
+    border: 1px solid #707070;
+    cursor: pointer;
+    transition: border-left 0.1s ease, transform 0.5s ease;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.popular-badge {
+    background-color: #ffffff;
+    color: #D75D33;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.popular-badge i {
+    color: #D75D33; 
+    
+}
+.date-entry.active-date {
+    border-left: 8px solid #D75D33;
+}
+.first-delivery-date-info{
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+#first-delivery-date{
+    font-weight: 800;
+}
+.date-entry p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.date-day {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.date-val {
+    font-weight: 600;
+    font-size: 14px;
+    color: #555;
+    margin-left: 5px; 
+}
+
+.delivery-date-container::-webkit-scrollbar {
+    width: 6px;
+}
+.delivery-date-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+.accordion-item {
+    border: none;
+    background: transparent;
+}
+.accordion-header {
+    border-bottom: 1px solid #ddd; 
+    padding-bottom: 7px;
+}
+.accordion-button {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding: 20px 0;
+    font-weight: 500; 
+    color: #000;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+}
+.accordion-button:not(.collapsed) {
+    color: #D75D33 !important; 
+}
+.accordion-button::after {
+    content: '\f078'; 
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    background-image: none !important; 
+    color: #D75D33;         
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+.accordion-button:not(.collapsed)::after {
+    transform: rotate(180deg);
+    color: #D75D33;
+}
+
+.accordion-body {
+    padding: 15px 0 25px 0;
+    color: #444;
+    text-align: start;
+    padding-left: 25px;
+    width: 95%;
+}
+#customAccordion{
+    width: 83%;
+    transform: translateX(6rem);
 }
 /*Responsive*/
 @media (hover: hover) {
@@ -129,6 +261,9 @@ body{
         width: 38%;
         color: white;
     }
+    .date-entry:hover {
+        transform: translateX(7px);
+    }
 }
 @media (max-width: 992px){
     .section-1-heading-text{
@@ -137,6 +272,19 @@ body{
     }
     .section-1-button{
         width: 50%;
+    }
+    .delivery-date-container{
+        width: 87%;
+        transform: translateX(2rem);
+    }
+    #customAccordion{
+        width: 100%;
+        transform: translateX(0px);
+    }
+    .section-2-button{
+        width: 82%;
+        transform: translateX(-2px);
+        margin-top: 2rem;
     }
 }
 @media (max-width:767px) {
@@ -161,5 +309,27 @@ body{
     }
     .section-1-button{
         width: 100%;
+    }
+    #customAccordion{
+        width: 113%;
+        transform: translateX(0px);
+        margin-left: -1.5rem;
+    }
+    .accordion-body{
+        padding-left: 0;
+        width: 86%;
+        margin-left: 1rem;
+    }
+    .big-font{
+        font-size: 1.7rem;
+    }
+    .delivery-date-container{
+        width: 100%;
+        transform: translateX(0px);
+    }
+    .section-2-button{
+        transform: translateX(10px);
+        width: 94%;
+        margin-top: 2rem;
     }
 }
