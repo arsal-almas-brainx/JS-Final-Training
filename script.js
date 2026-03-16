@@ -14,6 +14,7 @@ $(document).ready(function () {
         if (mealsValue) {
             selectedMeals = parseInt(mealsValue);
             console.log("Meal Selection:", selectedMeals);
+            document.getElementById('s-3-meals').innerHTML = selectedMeals;
             $('#meal-warning').addClass('d-none');
         }
     });
