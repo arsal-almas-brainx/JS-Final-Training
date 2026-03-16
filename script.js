@@ -64,6 +64,7 @@ $(document).ready(function () {
 
         selectedDate = $(this).data('date');
         console.log("Selected Date:", selectedDate);
+        document.getElementById("section-3-delivery-date").innerHTML = selectedDate;
         $('#date-warning').addClass('d-none');
     });
 

@@ -99,6 +99,18 @@ body{
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     pointer-events: none; 
 }
+.special-card-addon{
+    position: absolute;
+    top: 8.7rem;
+    left: 0.75rem;
+    z-index: 10;
+    background-color: #D75D33;
+    color: white;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    font-weight: 600;
+    width: 25%;
+}
 .section-1-card-image-inner-1 {
     display: block;
     width: 100%;
@@ -304,7 +316,36 @@ body{
 .section-3-card-ing .col-4{
     width: 27.3%;
 }
-
+.section-3-card .special-card{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+.special-card .section-3-meal-description{
+    color: white;
+    font-weight: 200;
+}
+.special-card .section-3-card-ing{
+    color: white;
+    font-weight: 200;
+}
+.section-3-right-heading{
+    font-size: 0.75rem;
+    padding: 0.75rem 0.2rem 0rem 0.3rem;
+}
+#section-3-delivery-date{
+    font-weight: 700;
+}
+.full-line{
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    color: #EDEDED;
+    opacity: 1;
+}
+.section-3-right{
+    margin-top: -1rem;
+    background-color: white;
+    height: 700px;
+}
 /*Responsive*/
 @media (hover: hover) {
     .section-1-card:hover .section-1-card-image-inner-1 {
