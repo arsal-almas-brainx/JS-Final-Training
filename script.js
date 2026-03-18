@@ -50,6 +50,7 @@ $(document).ready(function () {
         $(this).addClass('active-date');
         selectedDate = $(this).data('date');
         document.getElementById("section-3-delivery-date").innerHTML = selectedDate;
+        document.getElementById('dev-date').innerHTML = selectedDate;
         $('#date-warning').addClass('d-none');
     });
 
@@ -184,6 +185,9 @@ $(document).ready(function () {
 
         document.getElementById('s-3-subtotal').innerHTML = grandTotal.toFixed(2);
         document.getElementById('pill-total-number').innerHTML = cart.length;
+        document.getElementById('s-4-meal-price').innerHTML = grandTotal.toFixed(2);
+        const finalGrandTotal = grandTotal + 10.99 + 8.99;
+        document.getElementById('s-4-meal-price-total').innerHTML = finalGrandTotal.toFixed(2);
 
 
         updateFooterMessages(cart.length);
@@ -197,7 +201,7 @@ $(document).ready(function () {
         const $addMore = $footerDivs.eq(0);
         const $ready = $footerDivs.eq(1);
         const $remove = $footerDivs.eq(2);
-        const $nextBtn = $('.nextBtn.section-3-button');
+        const $nextBtn = $('.nextBtn.section-3-button-next');
 
         $addMore.addClass('d-none');
         $ready.addClass('d-none');

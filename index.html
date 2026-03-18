@@ -1163,7 +1163,7 @@
                         </div>
 
                         <div class="mt-3">
-                            <button class="btn nextBtn section-3-button">Next</button>
+                            <button class="btn nextBtn section-3-button-next">Next</button>
                         </div>
 
                         <div class="mt-2 t-12 text-center">
@@ -1189,7 +1189,7 @@
                 <!--Left Form checkout-->
                 <div class="col-lg-5 col-12">
                     <h3 class="s-4-main-head">Checkout</h3>
-                    <div class="container form-content-wrapper">
+                    <div class="container form-content-wrapper border mt-4">
                         <div class="row form-container px-5">
                             <h4 class="f-18 mt-4">Delivery Address</h4>
                             <!--Form-->
@@ -1278,6 +1278,39 @@
                 <!--Right Orders summary-->
                 <div class="col-lg-3 col-12">
                     <h3 class="s-4-main-head">Order Summary</h3>
+                    <div class="container order-content-wrapper border mt-4">
+                        <div class="row mt-2">
+                            <a href="#" class="text-decoration-underline font-14">+ Add Promo Code</a>
+                        </div>
+                        <hr class="full-line mt-2">
+                        <div class="row">
+                            <span class="s-4-order-label"> Delivery Date</span>
+                        </div>
+                        <div class="row input-fields mx-1 mt-2 font-14">
+                            <span id="dev-date" class="pt-1"></span>
+                        </div>
+                        <hr class="full-line mt-3">
+                        <div class="d-flex justify-content-between font-14">
+                            <span>Meal</span>
+                            <span class="fw-bold">$<span id="s-4-meal-price"></span></span>
+                        </div>
+                        <hr class="full-line mt-2">
+                        <div class="d-flex justify-content-between font-14">
+                            <span>Shipping</span>
+                            <span class="fw-bold">$8.99</span>
+                        </div>
+                        <hr class="full-line mt-2">
+                        <div class="d-flex justify-content-between font-14">
+                            <span>Tax</span>
+                            <span class="fw-bold">$10.99</span>
+                        </div>
+                        <hr class="full-line mt-2">
+                        <div class="d-flex justify-content-between font-14 mb-2">
+                            <span class="fw-bold">Total</span>
+                            <span class="orange-text">$<span id="s-4-meal-price-total"></span></span>
+                        </div>
+                    </div>
+                    
                 </div>
                 <!--Gap for desktop-->
                 <div class="col-lg-2 d-none d-lg-block"></div>
