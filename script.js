@@ -87,22 +87,22 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.plus-button', function () {
-            const name = $(this).data('name');
-            const img = $(this).data('img');
-            const price = parseFloat($(this).data('price'));
-            const isSpecial = $(this).data('special');
-            const addOnText = $(this).data('addontext');
+        const name = $(this).data('name');
+        const img = $(this).data('img');
+        const price = parseFloat($(this).data('price'));
+        const isSpecial = $(this).data('special');
+        const addOnText = $(this).data('addontext');
 
-            cart.push({
-                id: Date.now() + Math.random(),
-                name: name,
-                img: img,
-                price: price,
-                isSpecial: isSpecial,
-                addOnText: addOnText
-            });
-            renderCart();
-        
+        cart.push({
+            id: Date.now() + Math.random(),
+            name: name,
+            img: img,
+            price: price,
+            isSpecial: isSpecial,
+            addOnText: addOnText
+        });
+        renderCart();
+
     });
 
     $(document).on('click', '.minus-button', function () {
@@ -116,8 +116,10 @@ $(document).ready(function () {
 
     function renderCart() {
         const container = $('.added-items-container');
-        container.empty();
+        const step4Container = $('.my-meals-content-wrapper');
 
+        container.empty();
+        step4Container.empty();
 
         if (cart.length === 0) {
             document.getElementById('s-3-subtotal').innerHTML = "0.00";
@@ -129,16 +131,17 @@ $(document).ready(function () {
         let baseSubtotal = 0;
         let addonSubtotal = 0;
 
-        cart.forEach(item => {
+        // 1. Render Sidebar (s-3) - Individual items as per your old logic
+        cart.forEach((item) => {
             baseSubtotal += BASE_PRICE;
             addonSubtotal += (item.price - BASE_PRICE);
 
-            const extraClass = item.isSpecial ? "s-3-added-special" : "";
-            const imageBadge = item.isSpecial ? `<span class="special-card-addon" style="font-size: 10px; top: auto; bottom: 5px; left: 18px; right: auto; width: 68%">${item.addOnText}</span>` : "";
+            const extraClass3 = item.isSpecial ? "s-3-added-special" : "";
+            const imageBadge = item.isSpecial ? `<span class="special-card-addon" style="font-size: 10px; top: auto; bottom: 0px; left: 18px; right: auto; width: 68%">${item.addOnText}</span>` : "";
 
             container.append(`
-            <div class="s-3-added ${extraClass} mb-2">
-                <div class="row">
+            <div class="s-3-added ${extraClass3} mb-2">
+                <div class="row align-items-center">
                     <div class="col-3 s-3-img-container position-relative">
                         ${imageBadge}
                         <img src="${item.img}" alt="meal" class="s-3-img">
@@ -149,11 +152,8 @@ $(document).ready(function () {
                     <div class="col-2">
                         <div class="row">
                             <button class="btn dark-gray plus-button pad-0" 
-                                data-name="${item.name}" 
-                                data-img="${item.img}" 
-                                data-price="${item.price}"
-                                data-special="${item.isSpecial}"
-                                data-addontext="${item.addOnText}">+</button>
+                                data-name="${item.name}" data-img="${item.img}" data-price="${item.price}"
+                                data-special="${item.isSpecial}" data-addontext="${item.addOnText}">+</button>
                         </div>
                         <div class="row mt-1">
                             <button class="btn dark-gray minus-button pad-0" data-id="${item.id}">-</button>
@@ -163,34 +163,56 @@ $(document).ready(function () {
             </div>`);
         });
 
-        const mealLabel = cart.length === 1 ? "Meal" : "Meals";
-        const priceDisplay = addonSubtotal > 0
-            ? `$${baseSubtotal.toFixed(2)} + $${addonSubtotal.toFixed(2)}`
-            : `$${baseSubtotal.toFixed(2)}`;
+        // 2. Group items for Step 4 (s-4)
+        const groupedCart = cart.reduce((acc, item) => {
+            if (!acc[item.name]) {
+                acc[item.name] = { ...item, count: 0 };
+            }
+            acc[item.name].count++;
+            return acc;
+        }, {});
 
+        // 3. Render Step 4 (s-4) - Grouped items with counts
+        Object.values(groupedCart).forEach((item) => {
+            const extraClass3 = item.isSpecial ? "s-3-added-special" : "";
+            const extraClass4 = item.isSpecial ? "s-4-added-special" : "";
+            const imageBadge = item.isSpecial ? `<span class="special-card-addon" style="font-size: 9px; top: auto; bottom: 0px; left: 10px; right: auto; width: 62%">${item.addOnText}</span>` : "";
+
+            step4Container.append(`
+            <div class="s-3-added s-4-added ${extraClass3} ${extraClass4} border-bottom pb-1">
+                <div class="row align-items-center">
+                    <div class="col-1 fw-bold text-center s-4-meal-counter">
+                        ${item.count}
+                    </div>
+                    <div class="col-3 s-3-img-container position-relative px-1">
+                        ${imageBadge}
+                        <img src="${item.img}" alt="meal" class="s-3-img w-100">
+                    </div>
+                    <div class="col-8 s-4-meal-namedes">
+                        <div class="section-3-meal-name s-4-meal-name">
+                            <p class="fw-bold mt-3 mb-0">${item.name}</p>
+                        </div>
+                        <div class="section-3-meal-description s-4-meal-description mt-1">
+                            <p class="small text-muted mt-2">${item.description || ''}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>`);
+        });
+
+        // --- Totals Logic (Keep your existing summary logic below) ---
         const grandTotal = baseSubtotal + addonSubtotal;
+        const mealLabel = cart.length === 1 ? "Meal" : "Meals";
 
-        container.append(`
-        <div class="s-3-order-summary mt-5 d-none d-lg-block">
-            <span class="fw-bold">Order Summary</span>
-        </div>
-        <div class="d-none d-lg-flex justify-content-between mt-2">
-            <span class="font-14"><span>${cart.length}</span> ${mealLabel}</span>
-            <span class="font-14"> ${priceDisplay}</span>
-        </div>
-        <div class="d-none d-lg-flex justify-content-between mt-2">
-            <span class="font-14"> Subtotal</span>
-            <span class="font-14 fw-bold"> $${grandTotal.toFixed(2)}</span>
-        </div>
-        <p class="text-center font-12 mt-3 text-muted d-none d-lg-block">Tax and shipping calculated at checkout</p>
-    `);
+        // Update IDs
+        $('#s-3-subtotal').text(grandTotal.toFixed(2));
+        $('#pill-total-number').text(cart.length);
 
-        document.getElementById('s-3-subtotal').innerHTML = grandTotal.toFixed(2);
-        document.getElementById('pill-total-number').innerHTML = cart.length;
-        document.getElementById('s-4-meal-price').innerHTML = grandTotal.toFixed(2);
-        const finalGrandTotal = grandTotal + 10.99 + 8.99;
-        document.getElementById('s-4-meal-price-total').innerHTML = finalGrandTotal.toFixed(2);
-
+        if ($('#s-4-meal-price').length) {
+            $('#s-4-meal-price').text(grandTotal.toFixed(2));
+            const finalGrandTotal = grandTotal + 10.99 + 8.99;
+            $('#s-4-meal-price-total').text(finalGrandTotal.toFixed(2));
+        }
 
         updateFooterMessages(cart.length);
     }
@@ -274,7 +296,7 @@ $(document).ready(function () {
         $('body').css('overflow', 'auto'); // Unlock background scroll
     });
 
-   
+
     $(document).on('click', '.clear-all-link', function (e) {
         e.preventDefault();
         cart = [];

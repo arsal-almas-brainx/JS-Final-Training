@@ -350,7 +350,7 @@ body{
 #section-3-delivery-date{
     font-weight: 700;
 }
-.full-line{
+.full-line, .full-line-1{
     margin-left: -0.75rem;
     margin-right: -0.75rem;
     color: #EDEDED;
@@ -459,6 +459,30 @@ body{
 }
 #small-email{
     font-size: 0.84rem;
+}
+.s-4-meal-namedes{
+    padding: 0;
+}
+.my-meals-content-wrapper{
+    padding: 0;
+    overflow-y: auto;
+    max-height: 469px;
+    overflow-x: hidden;
+}
+.my-meals-content-wrapper .s-3-added.s-4-added{
+    background-color: white;
+}
+.my-meals-content-wrapper .s-3-added.s-4-added.s-3-added-special{
+    background-color: black;
+}
+.my-meals-content-wrapper .s-3-added.s-4-added.s-3-added-special .text-muted{
+    color: white !important;
+}
+.s-4-meal-counter{
+    transform: translateX(9px);
+}
+.s-3-added.s-4-added .s-3-img{
+    height: 66px;
 }
 /*Responsive*/
 @media (hover: hover) {
@@ -655,6 +679,12 @@ body{
     .section-1-all-cards{
         padding-left: 1.15rem;
     }
+    .s-4-main-head{
+        font-size: 1.875rem;
+    }
+    .s-3-added.s-4-added .s-3-img{
+        height: 100px;
+    }
 
 }
 @media (max-width:767px) {
@@ -732,7 +762,6 @@ body{
     }
     .s-3-img-container .special-card-addon{
         font-size: 10px !important;
-        bottom: 5px !important;
         width: 68% !important;
     }
     .minus-button{
@@ -740,6 +769,9 @@ body{
     }
     .section-1-all-cards{
         padding-left: 0.65rem;
+    }
+    .s-3-added.s-4-added .s-3-img{
+        height: 66px;
     }
     
 }
