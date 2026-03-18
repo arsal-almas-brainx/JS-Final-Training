@@ -441,7 +441,7 @@ body{
     font-size: 1.125rem;
     font-weight: 700;
 }
-.form-content-wrapper, .order-content-wrapper{
+.form-content-wrapper, .order-content-wrapper, .my-meals-content-wrapper{
     background-color: white;
 }
 .s-4-order-label{
@@ -537,7 +537,7 @@ body{
     .section-3-card-image{
         object-fit: cover;
         object-position: center;
-        width: 94%;
+        width: 97%;
         height: 100%;
     }
     .section-3-card-image-container{
@@ -554,19 +554,16 @@ body{
         font-size: 0.84rem;
     }
     .section-3-card-ing{
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     .section-3-button{
         width: 80%;
         margin-left: 10px;
         margin-bottom: 1.2rem;
     }
-    .section-3-card{
-        margin-left: 2.8rem;
-    }
     .special-card-addon{
         top: 16.5rem;
-        width: 16%;
+        width: 30%;
         font-size: 1.3rem;
     }
     .section-3-right {
@@ -611,9 +608,6 @@ body{
         z-index: 1055;
         display: none;
     }
-    .cart-overlay.show {
-        display: block;
-    }
     .added-items{
         height: 300px;
     }
@@ -625,7 +619,43 @@ body{
     }
     .section-3-right-footer .section-3-button-next{
         width: 100%;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        border-radius: 2px;
     }
+    .s-3-mobile-last{
+        margin-bottom: 8rem;
+    }
+    .fa-chevron-down:before{
+        font-size: 23px;
+    }
+    .s-3-all-cards{
+        margin-left: 0.5rem;
+    }
+    .s-3-added .section-3-meal-name{
+        font-size: 1.1rem;
+        padding: 0;
+    }
+    .dark-gray{
+        font-weight: 400;
+        transform: scale(1.5);
+    }
+    .s-3-img{
+        width: 200px;
+        height: 110px;
+    }
+    .s-3-img-container .special-card-addon{
+        font-size: 13px !important;
+        bottom: 1px !important;
+        width: 38% !important;
+    }
+    .minus-button{
+        margin-top: 1rem;
+    }
+    .section-1-all-cards{
+        padding-left: 1.15rem;
+    }
+
 }
 @media (max-width:767px) {
     .section-1-heading-text{
@@ -667,9 +697,6 @@ body{
         width: 100%;
         margin-top: 2rem;
     }
-    .section-3-card-image{
-        width: 97%;
-    }
     .section-3-card{
         margin-left: 12px;
     }
@@ -683,6 +710,36 @@ body{
     }
     .section-3-button, .section-3-button-next{
         margin-bottom: 0;
+    }
+    .added-items{
+        height: 250px;
+    }
+    .s-3-all-cards{
+        margin-left: 0;
+    }
+    .section-3-card-image{
+        width: 96.5%;
+    }
+    .section-3-card-ing{
+        font-size: 0.9rem;
+    }
+    .s-3-img{
+        width: 112px;
+        height: 72px;
+    }
+    .s-3-added .section-3-meal-name{
+        font-size: 0.875rem;
+    }
+    .s-3-img-container .special-card-addon{
+        font-size: 10px !important;
+        bottom: 5px !important;
+        width: 68% !important;
+    }
+    .minus-button{
+        margin-top: 0;
+    }
+    .section-1-all-cards{
+        padding-left: 0.65rem;
     }
     
 }

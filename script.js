@@ -62,6 +62,7 @@ $(document).ready(function () {
         const card = $(this).closest('.section-3-card-border');
         const mealName = card.find('.section-3-meal-name p').text().trim();
         const imgSrc = card.find('.section-3-card-image').attr('src');
+        const mealNameDes = card.find('.section-3-meal-description p').text().trim();
 
         const isSpecial = card.hasClass('special-card');
 
@@ -79,7 +80,8 @@ $(document).ready(function () {
             img: imgSrc,
             price: finalPrice,
             isSpecial: isSpecial,
-            addOnText: addOnPriceText
+            addOnText: addOnPriceText,
+            description: mealNameDes
         });
         renderCart();
     });
@@ -141,7 +143,7 @@ $(document).ready(function () {
                         ${imageBadge}
                         <img src="${item.img}" alt="meal" class="s-3-img">
                     </div>
-                    <div class="col-7 section-3-meal-name d-flex ps-4 align-items-center">
+                    <div class="col-7 section-3-meal-name d-flex ps-lg-4 align-items-center">
                         <p class="ps-3 mb-0">${item.name}</p>
                     </div>
                     <div class="col-2">
