@@ -6,18 +6,19 @@ body{
     border-top: 1px solid #C7C8C9;
 }
 .step-item {
+    font-size: 0.875rem;
     cursor: pointer;
     padding: 5px 15px;
     border-radius: 20px;
 }
 .section-1-heading{
-    font-size: 2rem;
+    font-size: 2.25rem;
     font-weight: 500;
 }
 .section-1-heading-text{
-    font-size: 0.98rem;
-    width: 58%;
-    margin-left: 18rem;
+    font-size: 1rem;
+    width: 63%;
+    margin-left: 14rem;
 }
 .orange-text{
     color: #D75D33;
@@ -34,6 +35,9 @@ body{
     color: #3167FF;
     font-weight: 600;
 }
+.step-item.active:hover {
+    text-decoration: none;
+}
 
 .step-item.disabled {
     cursor: not-allowed;
@@ -43,7 +47,6 @@ body{
 
 .step-separator {
     font-weight: bold;
-    color: #dee2e6;
     font-size: 0.85rem;
 }
 
@@ -51,21 +54,21 @@ body{
     min-height: 200px;
 }
 .section-1-card-head{
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 600;
     margin-bottom: -1rem;
 }
 .small-text{
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     font-weight: 500;
 }
 .section-1-price-plan{
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
     margin-bottom: -1.1rem;
 }
 .section-1-price{
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 .section-1-card-image-1, .section-1-card-image {
@@ -146,7 +149,7 @@ body{
     background-image: linear-gradient(to right, #AF2081, #533174);
     font-weight: 600;
     border-radius: 4px;
-    transform: translateX(23px);
+    transform: translateX(38px);
 }
 .section-3-button, .section-3-button-next{
     width: 100%;
@@ -284,12 +287,16 @@ body{
     font-weight: 900;
     background-image: none !important; 
     color: #D75D33;         
-    transform: rotate(0deg);
+    transform: rotate(0deg) scale(1.2);
     transition: transform 0.3s ease;
+    -webkit-text-stroke: 2px #D75D33; 
+    paint-order: stroke fill;
 }
 .accordion-button:not(.collapsed)::after {
-    transform: rotate(180deg);
+    transform: rotate(180deg) scale(1.2);
     color: #D75D33;
+    -webkit-text-stroke: 2px #D75D33; 
+    paint-order: stroke fill;
 }
 
 .accordion-body {
@@ -377,8 +384,6 @@ body{
 }
 .added-items{
     height: 500px;
-    overflow-y: auto;
-    overflow-x: hidden;
 }
 .t-12{
     font-size: 0.75rem;
@@ -433,9 +438,9 @@ body{
     font-weight: 700;
 }
 .input-fields{
-    border: 0.9px solid #9D9D9D;
-    border-radius: 2px;
-    height: 2rem;
+    border: 1px solid #9D9D9D;
+    border-radius: 4px;
+    height: 2.2rem;
 }
 .f-18{
     font-size: 1.125rem;
@@ -484,6 +489,51 @@ body{
 .s-3-added.s-4-added .s-3-img{
     height: 66px;
 }
+.order-summary-container{
+    position: sticky;
+    bottom: 8.2rem;
+}
+.added-items-container {
+    max-height: 336px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.section-3-right-footer {
+    position: sticky;
+    bottom: 0;
+    top: 35rem;
+}
+.section-3-right-footer::before{
+    content: "";
+    position: absolute; 
+    top: -6px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top: 1px solid #00000029;
+    border-radius: 15px;
+    pointer-events: none; 
+    z-index: -1; 
+    
+    transform: translateX(13px); 
+    margin-left: -25px;
+    transition: transform 0.3s ease;
+}
+.section-3-card-ing .border-end{
+    position: relative;
+    border-right: none !important;
+}
+.section-3-card-ing .border-end::after{
+    content: "";
+    position: absolute; 
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-right: 0.5px solid #EDEDED;
+    pointer-events: none; 
+    transform: translateX(-4px);
+}
 /*Responsive*/
 @media (hover: hover) {
     .section-1-card:hover .section-1-card-image-inner-1 {
@@ -514,6 +564,9 @@ body{
     .section-2-button:hover{
         color: white;
     }
+    .step-item:hover{
+        text-decoration: underline;
+    }
 }
 @media (min-width: 993px){
     .section-3-right{
@@ -529,6 +582,7 @@ body{
     .collapse-trigger {
         display: none !important;
     }
+    
 }
 @media (max-width: 992px){
     .section-1-heading-text{
@@ -616,7 +670,7 @@ body{
     }
     .section-3-right.expanded .section-3-right-heading {
         display: flex !important;
-        padding: 10px 15px;
+        font-size: 14px;
     }
     .added-items {
         height: 45vh;
@@ -640,6 +694,7 @@ body{
         position: relative;
         z-index: 10;
         padding: 10px 15px; 
+        top: 0;
     }
     .section-3-right-footer .section-3-button-next{
         width: 100%;
@@ -681,9 +736,13 @@ body{
     }
     .s-4-main-head{
         font-size: 1.875rem;
+        margin-left: 2rem;
     }
     .s-3-added.s-4-added .s-3-img{
         height: 100px;
+    }
+    .added-items-container{
+        overflow-y: hidden;
     }
 
 }
@@ -703,6 +762,7 @@ body{
     }
     .section-1-button{
         width: 100%;
+        padding: 12px 0;
     }
     #customAccordion{
         width: 113%;
@@ -726,6 +786,7 @@ body{
         transform: translateX(17px);
         width: 100%;
         margin-top: 2rem;
+        padding: 13px 0;
     }
     .section-3-card{
         margin-left: 12px;
@@ -755,7 +816,7 @@ body{
     }
     .s-3-img{
         width: 112px;
-        height: 72px;
+        height: 80px;
     }
     .s-3-added .section-3-meal-name{
         font-size: 0.875rem;
@@ -772,6 +833,15 @@ body{
     }
     .s-3-added.s-4-added .s-3-img{
         height: 66px;
+    }
+    .section-1-heading{
+        padding: 0 20px;
+    }
+    .accordion-mobile-space{
+        margin-bottom: 47rem;
+    }
+    .s-4-main-head{
+        margin-left: 0;
     }
     
 }

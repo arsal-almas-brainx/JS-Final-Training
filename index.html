@@ -23,10 +23,10 @@
         <div class="step-item disabled" data-step="4">Checkout</div>
     </nav>
     <div class="container-fluid main-body">
-        <div class="container-lg mt-3">
-            <div class="p-lg-4 text-center">
+        <div class="container-lg">
+            <div class="px-lg-5 text-center">
                 <!--Section 1-->
-                <div id="content-1" class="step-content row">
+                <div id="content-1" class="step-content row py-lg-4">
                     <!--Header image-->
                     <div class="row image-header">
                         <img src="assets/images/Plans Section/logo.svg" alt="logo" height="88" width="84">
@@ -136,7 +136,7 @@
                     </div>
                 </div>
                 <!--Section 2-->
-                <div id="content-2" class="step-content d-none row">
+                <div id="content-2" class="step-content d-none row py-lg-4">
                     <!--Delivery Date-->
                     <div class="row header-text mt-4 text-center">
                         <h3 class="big-font">Choose your delivery day</h3>
@@ -161,7 +161,7 @@
                         <h3 class="big-font">Common Questions</h3>
                     </div>
                     <!--Accordion-->
-                    <div class="container mt-5 p-4">
+                    <div class="container mt-5 p-4 accordion-mobile-space">
                         <div class="accordion accordion-flush" id="customAccordion">
 
                             <div class="accordion-item">
@@ -304,7 +304,7 @@
         <div id="content-3" class="step-content d-none">
             <div class="row">
                 <!--Section-3 Left-->
-                <div class="col-lg-9 col-12">
+                <div class="col-lg-9 col-12 mt-3">
                     <!--Cards-->
                     <div class="row row-cols-lg-4 row-cols-1 row-cols-md-2 gx-2 gx-md-3 gx-lg-2 gy-3 s-3-all-cards">
                         <!--Card 1-->
@@ -1137,7 +1137,7 @@
                         <i class="fa-solid fa-chevron-down orange-text"></i>
                     </div>
 
-                    <div class="section-3-right-heading d-flex justify-content-between">
+                    <div class="section-3-right-heading d-flex justify-content-between pt-lg-4">
                         <span>My delivery for: <span id="section-3-delivery-date"></span></span>
                         <a href="#" class="text-decoration-underline clear-all-link">Clear all</a>
                     </div>
@@ -1152,7 +1152,7 @@
 
                     <div class="section-3-right-footer">
                         <div class="section-3-subtotal d-flex justify-content-between" id="mobile-cart-toggle">
-                            <span class="py-2">Subtotal <span class="orange-text-nobold">$</span> <span
+                            <span class="py-2">Subtotal <span class="orange-text-nobold">$</span><span
                                     class="orange-text" id="s-3-subtotal"></span></span>
                             <div
                                 class="cart-pill rounded-pill border border-secondary border-opacity-25 d-inline-flex align-items-center px-3 py-2">
@@ -1187,7 +1187,7 @@
                 <!--Gap for desktop-->
                 <div class="col-lg-1 d-none d-lg-block order-lg-1"></div>
                 <!--Left Form checkout-->
-                <div class="col-lg-6 col-12 order-2 order-lg-2">
+                <div class="col-lg-6 col-12 order-2 order-lg-2 ps-lg-5 pt-lg-4">
                     <h3 class="s-4-main-head mt-4 mt-lg-0">Checkout</h3>
                     <div class="container form-content-wrapper border mt-4">
                         <div class="row form-container px-lg-5">
@@ -1201,7 +1201,7 @@
                                         <input type="text" name="firstName" id="firstName"
                                             class="form-control input-fields">
                                     </div>
-                                    <div class="col-12 col-lg">
+                                    <div class="col-12 col-lg ps-lg-1">
                                         <label for="lastName" class="form-label s-4-form-label">Last Name</label>
                                         <input type="text" name="lastName" id="lastName"
                                             class="form-control input-fields">
@@ -1240,13 +1240,13 @@
                                         <label for="city" class="form-label s-4-form-label">City</label>
                                         <input type="text" name="city" id="city" class="form-control input-fields">
                                     </div>
-                                    <div class="col-lg-4 col-12">
+                                    <div class="col-lg-4 col-12 ps-lg-1">
                                         <label for="state" class="form-label s-4-form-label">State</label>
                                         <input type="text" name="state" id="state" class="form-control input-fields">
                                     </div>
-                                    <div class="col-lg-3 col-12">
+                                    <div class="col-lg-3 col-12 ps-lg-1">
                                         <label for="zip" class="form-label s-4-form-label">Zip <a href="#"
-                                                class="text-decoration-underline ps-1">change</a></label>
+                                                class="text-decoration-underline ps-1" id="zip-change">change</a></label>
                                         <input type="text" name="zip" id="zip" class="form-control input-fields">
                                     </div>
                                 </div>
@@ -1276,11 +1276,12 @@
                     </div>
                 </div>
                 <!--Right Orders summary-->
-                <div class="col-lg-4 col-12 order-1 order-lg-3">
+                <div class="col-lg-4 col-12 order-1 order-lg-3 pe-lg-5 pt-lg-4">
                     <h3 class="s-4-main-head mt-4 mt-lg-0">Order Summary</h3>
                     <div class="container order-content-wrapper border mt-4">
                         <div class="row mt-2">
-                            <a href="#" class="text-decoration-underline font-14">+ Add Promo Code</a>
+                            <a href="#" class="text-decoration-underline font-14" id="promo-code">+ Add Promo Code</a>
+                            <input type="text" name="promo" id="promo" class="form-control input-fields d-none ml-11" placeholder="Enter Promo">
                         </div>
                         <hr class="full-line-1 mt-2">
                         <div class="row">
@@ -1326,7 +1327,7 @@
                 <h3 class="big-font">Common Questions</h3>
             </div>
             <!--Accordion-->
-            <div class="container mt-5 p-4">
+            <div class="container mt-5 p-4 accordion-mobile-space">
                 <div class="accordion accordion-flush" id="customAccordion">
 
                     <div class="accordion-item">

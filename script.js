@@ -41,7 +41,12 @@ $(document).ready(function () {
             const displayString = `${dayName}, ${monthShort} ${dayNum}`;
             let popularBadge = (i === 0) ? `<span class="popular-badge"><i class="fa-regular fa-star"></i> Most Popular</span>` : "";
             if (i === 0) document.getElementById("first-delivery-date").innerHTML = displayString;
-            container.append(`<div class="date-entry" data-date="${displayString}"><p class="date-text"><span class="date-day">${dayName}</span>, <span class="date-val">${monthShort} ${dayNum}</span></p>${popularBadge}</div>`);
+            if (i < 13) {
+                container.append(`<div class="date-entry border-bottom-0" data-date="${displayString}"><p class="date-text"><span class="date-day">${dayName}</span>, <span class="date-val">${monthShort} ${dayNum}</span></p>${popularBadge}</div>`);
+            }
+            else {
+                container.append(`<div class="date-entry" data-date="${displayString}"><p class="date-text"><span class="date-day">${dayName}</span>, <span class="date-val">${monthShort} ${dayNum}</span></p>${popularBadge}</div>`);
+            }
         }
     }
 
@@ -121,9 +126,15 @@ $(document).ready(function () {
         container.empty();
         step4Container.empty();
 
+        $('.order-summary-container').remove();
+
         if (cart.length === 0) {
             document.getElementById('s-3-subtotal').innerHTML = "0.00";
             document.getElementById('pill-total-number').innerHTML = 0;
+            if ($('#s-4-meal-price').length) {
+                $('#s-4-meal-price').text("0.00");
+                $('#s-4-meal-price-total').text("19.98");
+            }
             updateFooterMessages(0);
             return;
         }
@@ -131,13 +142,12 @@ $(document).ready(function () {
         let baseSubtotal = 0;
         let addonSubtotal = 0;
 
-        // 1. Render Sidebar (s-3) - Individual items as per your old logic
         cart.forEach((item) => {
             baseSubtotal += BASE_PRICE;
             addonSubtotal += (item.price - BASE_PRICE);
 
             const extraClass3 = item.isSpecial ? "s-3-added-special" : "";
-            const imageBadge = item.isSpecial ? `<span class="special-card-addon" style="font-size: 10px; top: auto; bottom: 0px; left: 18px; right: auto; width: 68%">${item.addOnText}</span>` : "";
+            const imageBadge = item.isSpecial ? `<span class="special-card-addon" style="font-size: 10px; top: auto; bottom: 0px; left: 18px; right: auto; width: 72%">${item.addOnText}</span>` : "";
 
             container.append(`
             <div class="s-3-added ${extraClass3} mb-2">
@@ -163,7 +173,6 @@ $(document).ready(function () {
             </div>`);
         });
 
-        // 2. Group items for Step 4 (s-4)
         const groupedCart = cart.reduce((acc, item) => {
             if (!acc[item.name]) {
                 acc[item.name] = { ...item, count: 0 };
@@ -172,20 +181,18 @@ $(document).ready(function () {
             return acc;
         }, {});
 
-        // 3. Render Step 4 (s-4) - Grouped items with counts
         Object.values(groupedCart).forEach((item) => {
-            const extraClass3 = item.isSpecial ? "s-3-added-special" : "";
-            const extraClass4 = item.isSpecial ? "s-4-added-special" : "";
-            const imageBadge = item.isSpecial ? `<span class="special-card-addon" style="font-size: 9px; top: auto; bottom: 0px; left: 10px; right: auto; width: 62%">${item.addOnText}</span>` : "";
+            const extraClassS4 = item.isSpecial ? "s-3-added-special s-4-added-special" : "";
+            const imageBadgeS4 = item.isSpecial ? `<span class="special-card-addon" style="font-size: 9px; top: auto; bottom: 0px; left: 10px; right: auto; width: 62%">${item.addOnText}</span>` : "";
 
             step4Container.append(`
-            <div class="s-3-added s-4-added ${extraClass3} ${extraClass4} border-bottom pb-1">
+            <div class="s-3-added s-4-added ${extraClassS4} border-bottom pb-1">
                 <div class="row align-items-center">
                     <div class="col-1 fw-bold text-center s-4-meal-counter">
                         ${item.count}
                     </div>
                     <div class="col-3 s-3-img-container position-relative px-1">
-                        ${imageBadge}
+                        ${imageBadgeS4}
                         <img src="${item.img}" alt="meal" class="s-3-img w-100">
                     </div>
                     <div class="col-8 s-4-meal-namedes">
@@ -200,11 +207,29 @@ $(document).ready(function () {
             </div>`);
         });
 
-        // --- Totals Logic (Keep your existing summary logic below) ---
-        const grandTotal = baseSubtotal + addonSubtotal;
         const mealLabel = cart.length === 1 ? "Meal" : "Meals";
+        const grandTotal = baseSubtotal + addonSubtotal;
+        const priceDisplay = addonSubtotal > 0
+            ? `$${baseSubtotal.toFixed(0)} + $${addonSubtotal.toFixed(2)}`
+            : `$${baseSubtotal.toFixed(0)}`;
 
-        // Update IDs
+        container.after(`
+            <div class="order-summary-container">
+                <div class="s-3-order-summary mt-5 d-none d-lg-block">
+                    <span class="fw-bold">Order Summary</span>
+                </div>
+                <div class="d-none d-lg-flex justify-content-between mt-2">
+                    <span class="font-14"><span>${cart.length}</span> ${mealLabel}</span>
+                    <span class="font-14"> ${priceDisplay}</span>
+                </div>
+                <div class="d-none d-lg-flex justify-content-between mt-2">
+                    <span class="font-14"> Subtotal</span>
+                    <span class="font-14 fw-bold"> $${grandTotal.toFixed(2)}</span>
+                </div>
+                <p class="text-center font-12 mt-3 text-muted d-none d-lg-block">Tax and shipping calculated at checkout</p>
+            </div>
+        `);
+
         $('#s-3-subtotal').text(grandTotal.toFixed(2));
         $('#pill-total-number').text(cart.length);
 
@@ -264,6 +289,16 @@ $(document).ready(function () {
         $('.step-item').removeClass('active');
         $(`.step-item[data-step="${currentStep}"]`).addClass('active').removeClass('disabled');
     }
+    $(document).on('click', '#zip-change', function (e) {
+        e.preventDefault(); 
+        const zipInput = $('#zip');
+        zipInput.focus();
+    });
+    $(document).on('click', '#promo-code', function (e) {
+    e.preventDefault();
+    $(this).addClass('d-none');
+    $('#promo').removeClass('d-none').focus();
+});
 
     $('.nextBtn').click(function () {
         if (currentStep === 1 && selectedMeals === 0) { $('#meal-warning').removeClass('d-none'); return; }
@@ -286,14 +321,13 @@ $(document).ready(function () {
         if ($(window).width() < 992) {
             $('.section-3-right').addClass('expanded');
             $('.cart-overlay').addClass('show');
-            /*$('body').css('overflow', 'hidden'); */
         }
     });
 
     $(document).on('click', '.collapse-trigger, .cart-overlay', function () {
         $('.section-3-right').removeClass('expanded');
         $('.cart-overlay').removeClass('show');
-        $('body').css('overflow', 'auto'); // Unlock background scroll
+        $('body').css('overflow', 'auto');
     });
 
 
