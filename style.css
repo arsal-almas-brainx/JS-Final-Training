@@ -460,7 +460,12 @@ body{
     font-weight: 700;
 }
 #checkboxx{
-    font-weight: 300;
+    font-weight: 400;
+}
+#checkboxx .form-check-input:focus{
+    border-color: #dee2e6; 
+    outline: 0;
+    box-shadow: none;
 }
 #small-email{
     font-size: 0.84rem;
