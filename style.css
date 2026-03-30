@@ -500,7 +500,7 @@ body{
     bottom: 8.2rem;
 }
 .added-items-container {
-    max-height: 336px;
+    max-height: 320px;
     overflow-y: auto;
     overflow-x: hidden;
 }
